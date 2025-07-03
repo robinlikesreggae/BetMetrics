@@ -41,7 +41,7 @@ function App() {
         </div>
         <div className="lg:col-span-2 space-y-8">
           <Dashboard refresh={refreshData} />
-          <BetTable refresh={refreshData} />
+          <BetTable refresh={refreshData} onBetAdded={handleBetAdded} />
         </div>
       </main>
     </div>

@@ -205,6 +205,29 @@ app.delete('/bets/:id', (req, res) => {
     });
 });
 
+// PUT /bets/:id - Update a bet
+app.put('/bets/:id', (req, res) => {
+    const { id } = req.params;
+    const { amount, odds, outcome, betType, betSource } = req.body;
+
+    if (amount === undefined || odds === undefined || outcome === undefined || betType === undefined || betSource === undefined) {
+        return res.status(400).json({ error: 'Missing required fields' });
+    }
+
+    db.run('UPDATE bets SET amount = ?, odds = ?, outcome = ?, betType = ?, betSource = ? WHERE id = ?',
+        [amount, odds, outcome, betType, betSource, id],
+        function (err) {
+            if (err) {
+                return res.status(500).json({ error: err.message });
+            }
+            if (this.changes === 0) {
+                return res.status(404).json({ error: 'Bet not found' });
+            }
+            res.status(200).json({ message: 'Bet updated successfully' });
+        }
+    );
+});
+
 app.listen(port, () => {
     console.log(`Backend server running on http://localhost:${port}`);
 });
