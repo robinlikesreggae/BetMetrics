@@ -1,39 +1,30 @@
-# Betting Tracker
+# BetMetrics
 
 A full-stack application to track your sports bets.
 
-## Setup and Running Instructions
+## Getting Started
 
-### 1. Backend Setup
+To get started, you'll need to have Node.js and npm installed. Then, you can follow these steps:
 
-Navigate to the `backend` directory and install dependencies:
+1.  **Install dependencies from the root of the `betting-tracker` directory:**
 
-```bash
-cd backend
-npm install
-```
+    ```bash
+    npm install
+    ```
 
-To start the backend server:
+2.  **Run the development server from the root of the `betting-tracker` directory:**
 
-```bash
-npm start
-```
+    ```bash
+    npm run dev
+    ```
 
-### 2. Frontend Setup
+    This will start the frontend and backend servers. You can then access the application at `http://localhost:5173`.
 
-Navigate to the `frontend` directory and install dependencies:
+## Available Scripts
 
-```bash
-cd frontend
-npm install
-```
-
-To start the frontend development server:
-
-```bash
-npm run dev
-```
-
-### 3. Access the Application
-
-Once both the backend and frontend servers are running, open your browser and navigate to `http://localhost:5173` (or whatever port the frontend starts on).
+-   `npm run dev`: Starts the frontend and backend servers in development mode.
+-   `npm run start:backend`: Starts only the backend server.
+-   `npm run start:frontend`: Starts only the frontend development server.
+-   `npm run build:frontend`: Builds the frontend for production.
+-   `npm run lint:frontend`: Lints the frontend code.
+-   `npm run preview:frontend`: Previews the production build.
