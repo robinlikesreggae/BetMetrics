@@ -1,0 +1,43 @@
+{
+  "name": "betting-tracker",
+  "version": "1.0.0",
+  "description": "A full-stack application to track your sports bets.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start:backend": "node backend/index.cjs",
+    "start:frontend": "cd frontend && vite",
+    "dev": "npm run start:backend & npm run start:frontend",
+    "build:frontend": "cd frontend && tsc -b && vite build",
+    "lint:frontend": "cd frontend && eslint .",
+    "preview:frontend": "cd frontend && vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.29.0",
+    "@tailwindcss/postcss": "^4.1.11",
+    "@tailwindcss/vite": "^4.1.11",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.5.2",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.29.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.2.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.34.1",
+    "vite": "^7.0.0"
+  }
+}
