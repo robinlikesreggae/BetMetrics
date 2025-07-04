@@ -208,14 +208,14 @@ app.delete('/bets/:id', (req, res) => {
 // PUT /bets/:id - Update a bet
 app.put('/bets/:id', (req, res) => {
     const { id } = req.params;
-    const { amount, odds, outcome, betType, betSource } = req.body;
+    const { amount, odds, outcome, betType, betSource, sport } = req.body;
 
-    if (amount === undefined || odds === undefined || outcome === undefined || betType === undefined || betSource === undefined) {
+    if (amount === undefined || odds === undefined || outcome === undefined || betType === undefined || betSource === undefined || sport === undefined) {
         return res.status(400).json({ error: 'Missing required fields' });
     }
 
-    db.run('UPDATE bets SET amount = ?, odds = ?, outcome = ?, betType = ?, betSource = ? WHERE id = ?',
-        [amount, odds, outcome, betType, betSource, id],
+    db.run('UPDATE bets SET amount = ?, odds = ?, outcome = ?, betType = ?, betSource = ?, sport = ? WHERE id = ?',
+        [amount, odds, outcome, betType, betSource, sport, id],
         function (err) {
             if (err) {
                 return res.status(500).json({ error: err.message });

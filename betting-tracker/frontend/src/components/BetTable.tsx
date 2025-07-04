@@ -289,6 +289,10 @@ const BetTable: React.FC<BetTableProps> = ({ refresh, onBetAdded }) => {
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Bet Source</label>
                   <input type="text" value={editedBet.betSource} onChange={(e) => setEditedBet({ ...editedBet, betSource: e.target.value })} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100" />
                 </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Sport</label>
+                  <input type="text" value={editedBet.sport} onChange={(e) => setEditedBet({ ...editedBet, sport: e.target.value })} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100" />
+                </div>
               </div>
             </form>
             <div className="flex justify-end space-x-4 mt-6">
