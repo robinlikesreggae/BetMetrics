@@ -30,7 +30,7 @@ const Dashboard: React.FC<DashboardProps> = ({ refresh }) => {
     const fetchStats = async () => {
       setError(null);
       try {
-        const response = await fetch(`http://localhost:3000/stats?range=${dateRange}&sport=${sportFilter}&betType=${betTypeFilter}&betSource=${betSourceFilter}`);
+        const response = await fetch(`http://localhost:3000/stats?range=${encodeURIComponent(dateRange)}&sport=${encodeURIComponent(sportFilter)}&betType=${encodeURIComponent(betTypeFilter)}&betSource=${encodeURIComponent(betSourceFilter)}`);
         if (!response.ok) {
           throw new Error('Failed to fetch stats');
         }
